@@ -5,7 +5,7 @@ set -euo pipefail
 printenv
 
 if which dotnet > /dev/null; then
-    dotnet ./build/build.cs -- "$@"
+    dotnet cake.cs -- "$@"
 else
     echo "error(1): Could not find 'dotnet', please install .NET SDK"
     exit 1

@@ -16,22 +16,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
 
       - name: Setup dotnet
         uses: actions/setup-dotnet@v5
         with:
-            dotnet-version: |
-              10.x
-
-      - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v4.3.3
-        with:
-          versionSpec: '6.6.x'
-
-      - name: Calculate version
-        uses: gittools/actions/gitversion/execute@v4.3.3
+          dotnet-version: 10.x
 
       - name: Deploy
         env:
